@@ -17,8 +17,8 @@ Input and solution file formats are those of the MESS-2020-1 competion, explaine
 
 ## Solutions
 
-The directory [`Results`](Results) stores the best solutions for the *CFLP-CI* and *CFLP-CI* datasets.
-Log files of the experiments are also available in `ods` format.
+The directory [`Results`](Results) stores the best solutions for the *CFLP-CI* and *MESS-2020-1* datasets.
+Log files of the experiments are available in `ods` format.
 
 The solution validator can be found in the MESS-2020+1 repository at [solution validator](https://github.com/MESS-2020-1/Validator).
 
@@ -32,7 +32,7 @@ Download the *EasyLocal++* framework
 
 `> git clone git@bitbucket.org:satt/easylocal-3.git`
 
-Set the path of the *EasyLocal++* installation (e.g. `../easylocal-3`) in the `` to the directory where it has been downloaded
+Set the path of the *EasyLocal++* installation (e.g. `../easylocal-3`)  to the directory where it has been downloaded
 
 `EASYLOCAL = ../easylocal-3`
 
@@ -41,6 +41,8 @@ Compile the solver with:
 `make`
 
 The executable `wlp` is created in the same directory of the source code.
+
+
 Run the solver with:
 
 `./wlp --main::instance  <instance_file>  --main::method CSKSAtb --main::init_state_strategy greedy --CSKSAtb::neighbors_accepted_ratio 0.13 --CSKSAtb::cooling_rate 0.994 --CSKSAtb::start_temperature 16.42 --CSKSAtb::min_temperature 0.183 --main::swap_rate 0.79 --main::swap_bias 0.45 --main::clopen_rate 0.04 --main::open_irate 0.16 --main::close_irate 0.019 --input::diff_threshold 8 --input::sqrt_ratio_preferred 1.375 --main::timeout_mode  <timeout> --main::output_file <solution_file>  --main::seed  <seed>`
