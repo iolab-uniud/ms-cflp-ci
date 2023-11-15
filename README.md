@@ -1,13 +1,12 @@
-# MS-CFLP-CI
-Repository for the Multi-Source Capacitated Facility Location Problem with Customer Incompatibilities.
+# Multi-Source Capacitated Facility Location Problem with Customer Incompatibilities (MS-CFLP-CI).
 
-This repository contains instances, best solutions, log files, and the source code of the paper *Multi-Neighborhood Simulated Annealing for the Capacitated Facility Location Problem with Customer Incompatibilities* by Sara Ceschia and Andrea Schaerf, submitted for publication.
+This repository contains instances, best solutions, log files, and the source code for MS-CFLP-CI of the paper *Multi-Neighborhood Simulated Annealing for the Capacitated Facility Location Problem with Customer Incompatibilities* by Sara Ceschia and Andrea Schaerf, submitted for publication.
 
 ------------------------------------------------------------------------
 
 ## Instances
 
-The directory [`Instances`](Instances) contains the instances of dataset *CFLP-CI*.
+The directory [`Instances`](Instances) contains the instances of the dataset *CFLP-CI*.
 
 The dataset *MESS-2020-1* is available in the [MESS-2020+1 repository](https://github.com/MESS-2020-1/).
 
@@ -40,27 +39,27 @@ Compile the solver with:
 
 `make`
 
-The executable `wlp` is created in the same directory of the source code.
+The executable `flp` is created in the same directory of the source code.
 
 
 Run the solver with:
 
-`./wlp --main::instance  <instance_file>  --main::method CSKSAtb --main::init_state_strategy greedy --CSKSAtb::neighbors_accepted_ratio 0.13 --CSKSAtb::cooling_rate 0.994 --CSKSAtb::start_temperature 16.42 --CSKSAtb::min_temperature 0.183 --main::swap_rate 0.79 --main::swap_bias 0.45 --main::clopen_rate 0.04 --main::open_irate 0.16 --main::close_irate 0.019 --input::diff_threshold 8 --input::sqrt_ratio_preferred 1.375 --main::timeout_mode  <timeout> --main::output_file <solution_file>  --main::seed  <seed>`
+`./flp --main::instance  <instance_file>  --main::method CSKSAtb --main::init_state_strategy greedy --CSKSAtb::neighbors_accepted_ratio 0.13 --CSKSAtb::cooling_rate 0.994 --CSKSAtb::start_temperature 16.42 --CSKSAtb::min_temperature 0.183 --main::swap_rate 0.79 --main::swap_bias 0.45 --main::clopen_rate 0.04 --main::open_irate 0.16 --main::close_irate 0.019 --input::diff_threshold 8 --input::sqrt_ratio_preferred 1.375 --main::timeout_mode  <timeout> --main::output_file <solution_file>  --main::seed  <seed>`
 
 For example, the command line:
 
-`./wlp --main::instance  ../Instances/CFLP-CI/cflp-ci-00.dzn  --main::method CSKSAtb --main::init_state_strategy greedy --CSKSAtb::neighbors_accepted_ratio 0.13 --CSKSAtb::cooling_rate 0.994 --CSKSAtb::start_temperature 16.42 --CSKSAtb::min_temperature 0.183 --main::swap_rate 0.79 --main::swap_bias 0.45 --main::clopen_rate 0.04 --main::open_irate 0.16 --main::close_irate 0.019 --input::diff_threshold 8 --input::sqrt_ratio_preferred 1.375 --main::timeout_mode  linear --main::output_file sol-cflp-ci-00.txt  --main::seed  0`
+`./flp --main::instance  ../Instances/CFLP-CI/cflp-ci_00.dzn  --main::method CSKSAtb --main::init_state_strategy greedy --CSKSAtb::neighbors_accepted_ratio 0.13 --CSKSAtb::cooling_rate 0.994 --CSKSAtb::start_temperature 16.42 --CSKSAtb::min_temperature 0.183 --main::swap_rate 0.79 --main::swap_bias 0.45 --main::clopen_rate 0.04 --main::open_irate 0.16 --main::close_irate 0.019 --input::diff_threshold 8 --input::sqrt_ratio_preferred 1.375 --main::timeout_mode  linear --main::output_file sol-cflp-ci_00.txt  --main::seed  0`
 
-Runs the solver on instance `cflp-ci-00.dzn` stored in the directory `../Instances/CFLP-CI/` and delivers the solution in the file `sol-cflp-ci-00.txt`. The `timout_mode` can be `linear` or `sqrt`.
+Runs the solver on instance `cflp-ci_00.dzn` stored in the directory `../Instances/CFLP-CI/` and delivers the solution in the file `sol-cflp-ci_00.txt`. The `timout_mode` can be either `linear` or `sqrt`.
 
 
 The main parameters are the following:
 
-- `--main::instance <file_name>` sets the path of the instance file (mandatory argument)
+- `--main::instance <file_name>` sets the path of the instance file (mandatory)
 
 - `--main::timeout_mode <string>` sets the timeout among linear and sqrt (default sqrt)
 
-- `--main::output_file <file_name>` this option allows you to write the solution in the file_name, otherwise only the cost and running time are printed in the output stream in `json` format.
+- `--main::output_file <file_name>` this option allows you to write the solution in the file_name, otherwise only the cost and the running time are printed in the output stream in `json` format.
 
-- `--main::seed <number>`  this option sets the value of the seed, otherwise it is pulled at random by the solver. The number must be an integer.
+- `--main::seed <number>` this option sets the value of the seed, otherwise it is pulled at random by the solver. The number must be an integer.
  
