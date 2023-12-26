@@ -1,6 +1,6 @@
 # Multi-Source Capacitated Facility Location Problem with Customer Incompatibilities (MS-CFLP-CI).
 
-This repository contains instances, best solutions, log files, and the source code for MS-CFLP-CI of the paper *Multi-Neighborhood Simulated Annealing for the Capacitated Facility Location Problem with Customer Incompatibilities* by Sara Ceschia and Andrea Schaerf, submitted for publication.
+This repository contains instances, best solutions, log files, and the source code for MS-CFLP-CI of the paper *Multi-Neighborhood Simulated Annealing for the Capacitated Facility Location Problem with Customer Incompatibilities* by Sara Ceschia and Andrea Schaerf, accepted for publication on *Computers and Industrial Engineering*.
 
 ------------------------------------------------------------------------
 
